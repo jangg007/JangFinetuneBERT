@@ -3,7 +3,8 @@ import numpy as np
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
+@st.cache_resource
 def get_model():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = BertForSequenceClassification.from_pretrained("jang007/JangModel")
@@ -31,3 +32,9 @@ if user_input and button:
 
 # pip install -r .\requirements.txt
 # streamlit run .\app.py
+
+# git init
+# git add .\app.py .\requirements.txt
+# git commit -m 'first commit'
+# git branch -M main
+# git push -u origin main
